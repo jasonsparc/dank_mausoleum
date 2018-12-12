@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>dank_mausoleum</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="style.css" />
+<script src="script.js"></script>
+
+</head>
+<body>
+<form>
+	<input style="margin-top: 24px;" type="text" id="soul" size="35"
+		spellcheck="false" autocomplete="off" autocorrect="off"
+		placeholder="the dominion has no point and tail">
+	<input style="margin-top: 8px;" type="password" id="salt" size="35"
+		spellcheck="false" autocomplete="off" autocorrect="off"
+		placeholder="the salt of the mausoleum">
+	<input style="margin-top: 24px;" type="text" id="light" size="35"
+		spellcheck="false" autocomplete="off" autocorrect="off"
+		placeholder="the light is before me" readonly>
+
+	<!--
+		Hack to allow submission via "enter" key,
+		even if there is more than one text input.
+	-->
+	<input style="visibility: hidden;" type="submit" value="Submit">
+</form>
+</body>
+</html>
