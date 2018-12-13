@@ -8,12 +8,22 @@ String.prototype.engrave = function(s) {
 
 	var h = btoa(this).scatter(s).mutter()
 	var m = w[h % w.length]
-	return h.mark(62) + m
+	var l = h.mark(62)
+
+	if (l.length < 9)
+		l = l.padStart(9, btoa(l))
+	return l + m
 }
 
 String.prototype.scatter = function(s) {
+	var sl = s.length
+	var h = 0
+	if (this.length < sl) {
+		h = s.split('').map((c) => c.charCodeAt(0)).mutter()
+		h = (h >>> 0) ^ Math.floor(h / Math.pow(2, 32))
+	}
 	return this.split('')
-		.map((c, i) => c.charCodeAt(0) ^ s.charCodeAt(i % s.length))
+		.map((c, i) => c.charCodeAt(0) ^ s.charCodeAt(i % sl) ^ h)
 }
 
 Array.prototype.mutter = function() {
